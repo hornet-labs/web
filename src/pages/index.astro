@@ -1,0 +1,1005 @@
+---
+const features = [
+  {
+    number: "01",
+    title: "A tap that knows",
+    description: "Simple, code-based access makes every pour feel effortless.",
+  },
+  {
+    number: "02",
+    title: "More good nights",
+    description: "Less time figuring things out. More time around the table.",
+  },
+  {
+    number: "03",
+    title: "Made for the real world",
+    description: "Thoughtful technology, designed to work where people gather.",
+  },
+];
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f8fa" />
+    <meta
+      name="description"
+      content="Kegnetic is making access at the tap simpler. Something good is brewing."
+    />
+    <title>Kegnetic — Something good is brewing</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}kegnetic-mark.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href={`${base}#top`} aria-label="Kegnetic home">
+          <img src={`${base}kegnetic-mark.svg`} alt="" width="42" height="42" />
+          <span>Kegnetic</span>
+        </a>
+        <span class="status"><span class="status-dot"></span>Something's brewing</span>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> A fresh take on the tap</p>
+            <h1 id="hero-title">A better pour<br />is <span>on tap.</span></h1>
+            <p class="hero-description">
+              We're making it easier to get from first hello to first pour.
+              A more thoughtful tap experience is on its way.
+            </p>
+            <a class="scroll-link" href={`${base}#our-approach`}>
+              Get to know Kegnetic
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="hero-art" aria-label="Illustration of a connected beer tap">
+            <div class="art-glow"></div>
+            <div class="art-note note-top"><span class="note-icon">✳</span> Good things, on tap</div>
+            <div class="tap-card">
+              <div class="tap-card-top">
+                <span class="tap-brand"><img src={`${base}kegnetic-mark.svg`} alt="" /> KEGNETIC</span>
+                <span class="tap-live"><span></span> READY</span>
+              </div>
+              <div class="tap-illustration">
+                <div class="tap-halo"></div>
+                <div class="tap-shadow"></div>
+                <div class="tap-body">
+                  <div class="tap-cap"></div>
+                  <div class="tap-neck"></div>
+                  <div class="tap-head"><span></span></div>
+                  <div class="tap-spout"></div>
+                  <div class="tap-handle"></div>
+                  <div class="tap-base"></div>
+                </div>
+                <div class="pour">
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="glass">
+                  <div class="foam"></div>
+                  <div class="beer"></div>
+                </div>
+              </div>
+              <div class="tap-card-bottom">
+                <span>YOUR NEXT ROUND</span>
+                <span class="round-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+            <div class="art-note note-bottom"><span class="spark">✦</span> Here's to what's next</div>
+          </div>
+          <div class="hero-index" aria-hidden="true"><span>01</span><i></i> A NEW KIND OF POUR</div>
+        </section>
+
+        <section class="approach" id="our-approach" aria-labelledby="approach-title">
+          <div class="approach-heading">
+            <p class="eyebrow">A little more about us</p>
+            <h2 id="approach-title">The best things<br />bring us <span>together.</span></h2>
+          </div>
+          <div class="approach-details">
+            <p class="approach-intro">
+              Kegnetic is rethinking the way people connect with the tap: simple,
+              welcoming access, powered by a little bit of clever technology.
+            </p>
+            <div class="feature-list">
+              {features.map((feature) => (
+                <article class="feature">
+                  <span class="feature-number">{feature.number}</span>
+                  <div>
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
+                  <span class="feature-arrow" aria-hidden="true">↗</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="closing" aria-label="Launch announcement">
+          <div class="closing-mark"><img src={`${base}kegnetic-mark.svg`} alt="" /></div>
+          <p class="eyebrow">We're just getting started</p>
+          <h2>Stay <span>thirsty.</span></h2>
+          <p>Our first pour is coming soon.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="footer-brand" href={`${base}#top`}>KEGNETIC<span>®</span></a>
+        <span>Thoughtfully poured. Coming soon.</span>
+        <span>© {new Date().getFullYear()} Kegnetic</span>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  :root {
+    font-family: "DM Sans", sans-serif;
+    color: #18263b;
+    background: #f7f8fa;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+    scroll-behavior: smooth;
+    --blue: #0068ed;
+    --navy: #17243a;
+    --muted: #738097;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .page-shell {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 7.2%;
+    overflow: hidden;
+  }
+
+  .site-header {
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9edf2;
+  }
+
+  .brand,
+  .status,
+  .tap-brand,
+  .tap-live,
+  .scroll-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .brand {
+    gap: 10px;
+    font: 800 19px "Manrope", sans-serif;
+    letter-spacing: -0.8px;
+  }
+
+  .brand img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .status {
+    gap: 9px;
+    color: #69758a;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .status-dot,
+  .tap-live span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f7931e;
+    box-shadow: 0 0 0 4px #fff2e4;
+  }
+
+  .hero {
+    min-height: 650px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4%;
+    padding: 60px 0 92px;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 20px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 23px;
+    color: #68758a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .hero-copy .eyebrow span {
+    width: 22px;
+    height: 2px;
+    background: #f7931e;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2 {
+    font-family: "Manrope", sans-serif;
+  }
+
+  h1 {
+    margin-bottom: 24px;
+    font-size: clamp(56px, 6.3vw, 88px);
+    font-weight: 700;
+    letter-spacing: -0.085em;
+    line-height: 0.99;
+  }
+
+  h1 span,
+  .approach-heading h2 span,
+  .closing h2 span {
+    color: var(--blue);
+  }
+
+  .hero-description {
+    max-width: 395px;
+    margin-bottom: 30px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .scroll-link {
+    gap: 13px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .scroll-link span {
+    width: 31px;
+    height: 31px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #dce2eb;
+    border-radius: 50%;
+    font-size: 15px;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  }
+
+  .scroll-link:hover span {
+    color: white;
+    background: var(--blue);
+    border-color: var(--blue);
+    transform: translateY(2px);
+  }
+
+  .hero-art {
+    min-height: 440px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+  }
+
+  .art-glow {
+    width: min(88%, 410px);
+    aspect-ratio: 1;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(circle, #e6efff 0, #edf3fc 48%, #f7f8fa 72%);
+  }
+
+  .tap-card {
+    width: min(76%, 330px);
+    height: 365px;
+    position: relative;
+    z-index: 1;
+    padding: 22px 23px 17px;
+    overflow: hidden;
+    border: 1px solid rgba(226, 233, 244, 0.8);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 25px 70px rgba(46, 73, 122, 0.12), 0 3px 10px rgba(46, 73, 122, 0.04);
+    transform: rotate(-3deg);
+  }
+
+  .tap-card-top,
+  .tap-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tap-brand {
+    gap: 6px;
+    color: #768196;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+  }
+
+  .tap-brand img {
+    width: 21px;
+    height: 21px;
+  }
+
+  .tap-live {
+    gap: 7px;
+    color: #79869a;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .tap-live span {
+    width: 5px;
+    height: 5px;
+    background: #46c893;
+    box-shadow: 0 0 0 3px #e7f9f1;
+  }
+
+  .tap-illustration {
+    height: 274px;
+    position: relative;
+  }
+
+  .tap-halo {
+    width: 212px;
+    height: 212px;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #eef5ff 3%, #dfeaff 100%);
+    transform: translateX(-50%);
+  }
+
+  .tap-shadow {
+    width: 174px;
+    height: 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 29px;
+    left: 50%;
+    border-radius: 50%;
+    background: rgba(45, 75, 127, 0.12);
+    filter: blur(7px);
+    transform: translateX(-50%);
+  }
+
+  .tap-body {
+    width: 132px;
+    height: 184px;
+    position: absolute;
+    z-index: 2;
+    top: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tap-cap {
+    width: 57px;
+    height: 17px;
+    position: absolute;
+    top: 0;
+    left: 37px;
+    border-radius: 6px 6px 2px 2px;
+    background: linear-gradient(90deg, #252e3e, #536075 50%, #252e3e);
+  }
+
+  .tap-neck {
+    width: 39px;
+    height: 31px;
+    position: absolute;
+    top: 13px;
+    left: 46px;
+    background: linear-gradient(90deg, #303949, #69768b 50%, #283344);
+  }
+
+  .tap-head {
+    width: 132px;
+    height: 56px;
+    position: absolute;
+    top: 37px;
+    border: 1px solid #67758c;
+    border-radius: 9px 9px 13px 13px;
+    background: linear-gradient(110deg, #283447 0%, #69768a 45%, #354154 82%);
+    box-shadow: inset 0 -8px 10px rgba(17, 27, 44, 0.28), 0 7px 11px rgba(26, 40, 62, 0.19);
+  }
+
+  .tap-head::after {
+    width: 56px;
+    height: 3px;
+    position: absolute;
+    top: 13px;
+    left: 38px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.27);
+    content: "";
+  }
+
+  .tap-head span {
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 35px;
+    left: 61px;
+    border: 2px solid #79bbff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(75, 161, 255, 0.8);
+  }
+
+  .tap-spout {
+    width: 29px;
+    height: 28px;
+    position: absolute;
+    top: 84px;
+    left: 81px;
+    border-right: 11px solid #364256;
+    border-bottom: 10px solid #364256;
+    border-radius: 0 0 9px;
+  }
+
+  .tap-handle {
+    width: 7px;
+    height: 40px;
+    position: absolute;
+    top: 72px;
+    left: 22px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #303a4a, #77849a 55%, #354153);
+    transform: rotate(32deg);
+  }
+
+  .tap-handle::before {
+    width: 21px;
+    height: 9px;
+    position: absolute;
+    top: -4px;
+    left: -7px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #3b4658, #78859a);
+    content: "";
+  }
+
+  .tap-base {
+    width: 108px;
+    height: 45px;
+    position: absolute;
+    top: 137px;
+    left: 12px;
+    border-radius: 7px 7px 13px 13px;
+    background: linear-gradient(105deg, #242e40 0%, #59667b 48%, #2e394b 100%);
+    box-shadow: inset 0 -7px 8px rgba(17, 27, 44, 0.3);
+  }
+
+  .tap-base::before {
+    width: 119px;
+    height: 8px;
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    background: #243146;
+    content: "";
+  }
+
+  .glass {
+    width: 37px;
+    height: 65px;
+    position: absolute;
+    z-index: 3;
+    right: 39px;
+    bottom: 29px;
+    overflow: hidden;
+    border: 1px solid rgba(104, 140, 183, 0.65);
+    border-top: 0;
+    border-radius: 3px 3px 9px 9px;
+    background: linear-gradient(90deg, rgba(207, 226, 246, 0.18), rgba(255, 255, 255, 0.72), rgba(207, 226, 246, 0.24));
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+  }
+
+  .foam {
+    height: 18px;
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    right: 0;
+    left: 0;
+    border-radius: 50% 50% 0 0;
+    background: #fff3d9;
+  }
+
+  .beer {
+    position: absolute;
+    top: 14px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #dc8d22, #f6bd52 55%, #d98519);
+  }
+
+  .pour {
+    width: 7px;
+    height: 35px;
+    position: absolute;
+    z-index: 3;
+    right: 78px;
+    bottom: 77px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pour i {
+    width: 2px;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(#f6c967, #df901e);
+  }
+
+  .pour i:nth-child(2) {
+    height: 80%;
+    margin-top: 6px;
+  }
+
+  .pour i:nth-child(3) {
+    height: 60%;
+    margin-top: 12px;
+  }
+
+  .tap-card-bottom {
+    padding-top: 13px;
+    border-top: 1px solid #edf0f5;
+    color: #8691a3;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+  }
+
+  .round-arrow {
+    color: #8491a6;
+    font-size: 14px;
+  }
+
+  .art-note {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 15px;
+    border: 1px solid rgba(226, 233, 244, 0.84);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 25px rgba(46, 73, 122, 0.07);
+    color: #58667d;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .note-top {
+    top: 77px;
+    right: -6px;
+  }
+
+  .note-bottom {
+    bottom: 58px;
+    left: 2px;
+  }
+
+  .note-icon {
+    color: var(--blue);
+    font-size: 15px;
+  }
+
+  .spark {
+    color: #f7931e;
+    font-size: 14px;
+  }
+
+  .hero-index {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #8994a5;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-index span {
+    color: var(--blue);
+  }
+
+  .hero-index i {
+    width: 36px;
+    height: 1px;
+    background: #d8dfe9;
+  }
+
+  .approach {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 10%;
+    padding: 108px 0 118px;
+    border-top: 1px solid #e9edf2;
+  }
+
+  .approach-heading .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .approach-heading h2 {
+    margin-bottom: 0;
+    font-size: clamp(36px, 4.1vw, 54px);
+    font-weight: 700;
+    letter-spacing: -0.075em;
+    line-height: 1.14;
+  }
+
+  .approach-intro {
+    max-width: 475px;
+    margin: 5px 0 30px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .feature {
+    min-height: 80px;
+    display: grid;
+    grid-template-columns: 36px 1fr 20px;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #e5eaf0;
+  }
+
+  .feature:last-child {
+    border-bottom: 1px solid #e5eaf0;
+  }
+
+  .feature-number {
+    color: #98a3b3;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .feature h3 {
+    margin-bottom: 4px;
+    color: #25334a;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .feature p {
+    margin-bottom: 0;
+    color: #8a95a6;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .feature-arrow {
+    color: #98a3b3;
+    font-size: 14px;
+  }
+
+  .closing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 66px 20px 68px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #17243a;
+    color: white;
+    text-align: center;
+  }
+
+  .closing::before,
+  .closing::after {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    content: "";
+  }
+
+  .closing::before {
+    top: -225px;
+    left: -75px;
+  }
+
+  .closing::after {
+    right: -110px;
+    bottom: -250px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .closing-mark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .closing-mark img {
+    width: 31px;
+    height: 31px;
+  }
+
+  .closing .eyebrow {
+    margin-bottom: 12px;
+    color: #9fabc0;
+    font-size: 9px;
+  }
+
+  .closing h2 {
+    margin-bottom: 9px;
+    font-size: clamp(42px, 6vw, 66px);
+    letter-spacing: -0.08em;
+    line-height: 1;
+  }
+
+  .closing h2 span {
+    color: #70b5ff;
+  }
+
+  .closing > p:last-child {
+    margin-bottom: 0;
+    color: #aab5c6;
+    font-size: 13px;
+  }
+
+  .site-footer {
+    min-height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #8a95a6;
+    font-size: 10px;
+  }
+
+  .footer-brand {
+    color: #314059;
+    font: 800 12px "Manrope", sans-serif;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-brand span {
+    margin-left: 2px;
+    font: 500 8px "DM Sans", sans-serif;
+    vertical-align: top;
+  }
+
+  @media (min-width: 1500px) {
+    .hero {
+      min-height: 730px;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .page-shell {
+      padding: 0 6%;
+    }
+
+    .hero {
+      min-height: 570px;
+      gap: 0;
+    }
+
+    .hero-art {
+      min-height: 375px;
+    }
+
+    .tap-card {
+      width: min(86%, 300px);
+      transform: rotate(-2deg) scale(0.9);
+    }
+
+    .note-top {
+      right: -14px;
+    }
+
+    .note-bottom {
+      left: -12px;
+    }
+
+    .approach {
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 7%;
+      padding: 84px 0 92px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .page-shell {
+      padding: 0 22px;
+    }
+
+    .site-header {
+      height: 76px;
+    }
+
+    .brand {
+      font-size: 17px;
+    }
+
+    .brand img {
+      width: 31px;
+      height: 31px;
+    }
+
+    .status {
+      font-size: 10px;
+    }
+
+    .hero {
+      min-height: 0;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 70px 0 73px;
+    }
+
+    .hero-copy {
+      padding-bottom: 0;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      font-size: 9px;
+    }
+
+    h1 {
+      margin-bottom: 18px;
+      font-size: clamp(58px, 15vw, 78px);
+    }
+
+    .hero-description {
+      max-width: 340px;
+      margin-bottom: 23px;
+      font-size: 14px;
+    }
+
+    .hero-art {
+      min-height: 365px;
+      margin: 4px -12px 0;
+    }
+
+    .tap-card {
+      width: 280px;
+      transform: rotate(-3deg) scale(0.9);
+    }
+
+    .art-glow {
+      width: 330px;
+    }
+
+    .note-top {
+      top: 46px;
+      right: 0;
+    }
+
+    .note-bottom {
+      bottom: 34px;
+      left: 0;
+    }
+
+    .hero-index {
+      bottom: 22px;
+      font-size: 8px;
+    }
+
+    .approach {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 70px 0 76px;
+    }
+
+    .approach-heading h2 {
+      font-size: 43px;
+    }
+
+    .approach-intro {
+      margin-top: 0;
+      font-size: 13px;
+    }
+
+    .feature {
+      min-height: 76px;
+      grid-template-columns: 25px 1fr 16px;
+      gap: 11px;
+    }
+
+    .feature p {
+      font-size: 10px;
+    }
+
+    .closing {
+      padding: 54px 14px 56px;
+    }
+
+    .site-footer {
+      min-height: 92px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px 15px;
+      padding: 22px 0;
+      font-size: 9px;
+    }
+
+    .site-footer > span:nth-child(2) {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
