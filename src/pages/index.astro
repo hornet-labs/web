@@ -75,6 +75,33 @@ const base = import.meta.env.BASE_URL.endsWith("/")
               <div class="tap-illustration">
                 <div class="tap-halo"></div>
                 <div class="tap-shadow"></div>
+                <div class="control-panel" aria-hidden="true">
+                  <div class="screen-bezel">
+                    <div class="screen-display">
+                      <div class="screen-topbar">
+                        <span class="screen-brand">CHOOSE A POUR</span>
+                        <span class="screen-status"><i></i> TAP READY</span>
+                      </div>
+                      <div class="screen-drinks">
+                        <div class="screen-drink">
+                          <span class="drink-icon lager"></span>
+                          <span class="drink-name">LAGER</span>
+                          <span class="drink-price">$5.00</span>
+                        </div>
+                        <div class="screen-drink">
+                          <span class="drink-icon pale"></span>
+                          <span class="drink-name">PALE ALE</span>
+                          <span class="drink-price">$6.00</span>
+                        </div>
+                        <div class="screen-drink">
+                          <span class="drink-icon stout"></span>
+                          <span class="drink-name">STOUT</span>
+                          <span class="drink-price">$6.50</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="tap-body">
                   <div class="tap-cap"></div>
                   <div class="tap-neck"></div>
@@ -373,14 +400,14 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   .tap-live {
     gap: 7px;
     color: #79869a;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.12em;
   }
 
   .tap-live span {
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     background: #46c893;
     box-shadow: 0 0 0 3px #e7f9f1;
   }
@@ -388,6 +415,134 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   .tap-illustration {
     height: 274px;
     position: relative;
+  }
+
+  .control-panel {
+    width: 194px;
+    height: 91px;
+    position: absolute;
+    z-index: 4;
+    top: 8px;
+    left: 50%;
+    padding: 6px;
+    border: 1px solid #6c7480;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #343a43, #11151a 35%, #050607 72%, #303741);
+    box-shadow: 0 7px 14px rgba(17, 27, 44, 0.3), inset 0 0 0 2px #171b20;
+    transform: translateX(-50%);
+  }
+
+  .screen-display {
+    height: 100%;
+    padding: 5px;
+    overflow: hidden;
+    border: 1px solid #314967;
+    border-radius: 2px;
+    background: linear-gradient(145deg, #10243b, #071426);
+  }
+
+  .screen-bezel {
+    height: 100%;
+  }
+
+  .screen-topbar {
+    height: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: #dceaff;
+    font-size: 5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .screen-brand {
+    color: #78b9ff;
+  }
+
+  .screen-status {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #a7c0db;
+    font-size: 4px;
+  }
+
+  .screen-status i {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #49d49a;
+    box-shadow: 0 0 4px rgba(73, 212, 154, 0.75);
+  }
+
+  .screen-drinks {
+    height: calc(100% - 12px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .screen-drink {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: 1px solid rgba(126, 174, 226, 0.35);
+    border-radius: 2px;
+    background: linear-gradient(160deg, rgba(55, 119, 181, 0.8), rgba(17, 50, 84, 0.92));
+    color: #edf5ff;
+  }
+
+  .screen-drink:nth-child(2) {
+    background: linear-gradient(160deg, rgba(60, 127, 191, 0.85), rgba(24, 58, 91, 0.94));
+  }
+
+  .screen-drink:nth-child(3) {
+    background: linear-gradient(160deg, rgba(54, 105, 156, 0.85), rgba(20, 45, 70, 0.95));
+  }
+
+  .drink-icon {
+    width: 13px;
+    height: 13px;
+    position: relative;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 62%, #f6c55e 0 35%, #de962c 37% 55%, #3b8bd1 57%);
+    box-shadow: 0 0 5px rgba(105, 183, 255, 0.4);
+  }
+
+  .drink-icon::after {
+    width: 6px;
+    height: 2px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 3px;
+    background: #fff3d4;
+    content: "";
+  }
+
+  .drink-icon.pale {
+    background: radial-gradient(circle at 50% 62%, #eaaa43 0 35%, #bd7323 37% 55%, #34a3d8 57%);
+  }
+
+  .drink-icon.stout {
+    background: radial-gradient(circle at 50% 62%, #88532c 0 35%, #4b3027 37% 55%, #3d83c4 57%);
+  }
+
+  .drink-name {
+    font-size: 5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .drink-price {
+    color: #b6d5f4;
+    font-size: 4px;
   }
 
   .tap-halo {
@@ -416,118 +571,144 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
   .tap-body {
     width: 132px;
-    height: 184px;
+    height: 160px;
     position: absolute;
     z-index: 2;
-    top: 47px;
+    top: 90px;
     left: 50%;
     transform: translateX(-50%);
+    transform-origin: top center;
   }
 
   .tap-cap {
-    width: 57px;
-    height: 17px;
+    width: 48px;
+    height: 12px;
     position: absolute;
     top: 0;
-    left: 37px;
-    border-radius: 6px 6px 2px 2px;
-    background: linear-gradient(90deg, #252e3e, #536075 50%, #252e3e);
+    left: 42px;
+    border: 1px solid #919dad;
+    border-radius: 5px 5px 2px 2px;
+    background: linear-gradient(90deg, #707e90, #eef3f8 24%, #9daaba 52%, #e1e7ed 76%, #69778a);
+    box-shadow: 0 2px 3px rgba(27, 40, 58, 0.2);
   }
 
   .tap-neck {
-    width: 39px;
-    height: 31px;
+    width: 42px;
+    height: 54px;
     position: absolute;
-    top: 13px;
-    left: 46px;
-    background: linear-gradient(90deg, #303949, #69768b 50%, #283344);
+    top: 9px;
+    left: 45px;
+    border: 1px solid #8491a2;
+    border-radius: 3px 3px 6px 6px;
+    background: linear-gradient(90deg, #606e80, #f3f5f7 18%, #abb6c3 42%, #f8fafb 58%, #8794a5 83%, #566477);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12), 0 4px 8px rgba(23, 36, 58, 0.18);
   }
 
   .tap-head {
-    width: 132px;
-    height: 56px;
+    width: 116px;
+    height: 40px;
     position: absolute;
-    top: 37px;
-    border: 1px solid #67758c;
-    border-radius: 9px 9px 13px 13px;
-    background: linear-gradient(110deg, #283447 0%, #69768a 45%, #354154 82%);
-    box-shadow: inset 0 -8px 10px rgba(17, 27, 44, 0.28), 0 7px 11px rgba(26, 40, 62, 0.19);
+    top: 45px;
+    left: 8px;
+    border: 1px solid #788699;
+    border-radius: 7px 7px 10px 10px;
+    background: linear-gradient(105deg, #657286, #e8edf2 18%, #9ba8b7 38%, #f4f6f8 52%, #8996a7 77%, #556376);
+    box-shadow: inset 0 -5px 8px rgba(37, 51, 70, 0.2), 0 6px 10px rgba(26, 40, 62, 0.2);
   }
 
   .tap-head::after {
-    width: 56px;
-    height: 3px;
+    width: 47px;
+    height: 2px;
     position: absolute;
-    top: 13px;
-    left: 38px;
+    top: 8px;
+    left: 34px;
     border-radius: 3px;
-    background: rgba(255, 255, 255, 0.27);
+    background: rgba(255, 255, 255, 0.65);
     content: "";
   }
 
   .tap-head span {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     position: absolute;
-    top: 35px;
-    left: 61px;
-    border: 2px solid #79bbff;
+    top: 27px;
+    left: 54px;
+    border: 2px solid #58aaff;
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(75, 161, 255, 0.8);
+    box-shadow: 0 0 7px rgba(75, 161, 255, 0.75);
   }
 
   .tap-spout {
-    width: 29px;
-    height: 28px;
+    width: 15px;
+    height: 18px;
     position: absolute;
-    top: 84px;
-    left: 81px;
-    border-right: 11px solid #364256;
-    border-bottom: 10px solid #364256;
-    border-radius: 0 0 9px;
+    z-index: 2;
+    top: 78px;
+    left: 59px;
+    border: 1px solid #7d8b9b;
+    border-top: 0;
+    border-radius: 0 0 3px 3px;
+    background: linear-gradient(90deg, #6e7c8e, #f4f6f8 35%, #9ca9b8 72%, #627084);
+  }
+
+  .tap-spout::after {
+    width: 19px;
+    height: 4px;
+    position: absolute;
+    bottom: -2px;
+    left: -3px;
+    border: 1px solid #778598;
+    border-radius: 2px;
+    background: linear-gradient(#f3f5f7, #8b98a8);
+    content: "";
   }
 
   .tap-handle {
-    width: 7px;
-    height: 40px;
+    width: 8px;
+    height: 43px;
     position: absolute;
-    top: 72px;
-    left: 22px;
-    border-radius: 5px;
-    background: linear-gradient(90deg, #303a4a, #77849a 55%, #354153);
-    transform: rotate(32deg);
+    top: 24px;
+    left: 23px;
+    border: 1px solid #454e5c;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #202938, #596578 45%, #2a3444);
+    box-shadow: 1px 3px 5px rgba(22, 33, 50, 0.2);
+    transform: rotate(18deg);
   }
 
   .tap-handle::before {
-    width: 21px;
-    height: 9px;
+    width: 23px;
+    height: 10px;
     position: absolute;
-    top: -4px;
-    left: -7px;
-    border-radius: 5px;
-    background: linear-gradient(90deg, #3b4658, #78859a);
+    top: -7px;
+    left: -9px;
+    border: 1px solid #424d5c;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #222b38, #667287 50%, #263140);
     content: "";
   }
 
   .tap-base {
-    width: 108px;
-    height: 45px;
+    width: 100px;
+    height: 16px;
     position: absolute;
-    top: 137px;
-    left: 12px;
-    border-radius: 7px 7px 13px 13px;
-    background: linear-gradient(105deg, #242e40 0%, #59667b 48%, #2e394b 100%);
-    box-shadow: inset 0 -7px 8px rgba(17, 27, 44, 0.3);
+    top: 83px;
+    left: 16px;
+    border: 1px solid #7c8999;
+    border-radius: 3px 3px 7px 7px;
+    background: linear-gradient(100deg, #647185, #edf1f5 20%, #8d9aac 49%, #f5f7f9 69%, #677589);
+    box-shadow: inset 0 -3px 4px rgba(37, 51, 70, 0.18), 0 4px 7px rgba(23, 36, 58, 0.18);
   }
 
   .tap-base::before {
-    width: 119px;
-    height: 8px;
+    width: 108px;
+    height: 5px;
     position: absolute;
-    bottom: -5px;
+    bottom: -4px;
     left: -5px;
-    border-radius: 50%;
-    background: #243146;
+    border: 1px solid #788699;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(90deg, #59677a, #e6eaef 35%, #7d8a9a 72%, #59677a);
     content: "";
   }
 
@@ -536,14 +717,15 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     height: 65px;
     position: absolute;
     z-index: 3;
-    right: 39px;
-    bottom: 29px;
+    left: 50%;
+    bottom: 12px;
     overflow: hidden;
     border: 1px solid rgba(104, 140, 183, 0.65);
     border-top: 0;
     border-radius: 3px 3px 9px 9px;
     background: linear-gradient(90deg, rgba(207, 226, 246, 0.18), rgba(255, 255, 255, 0.72), rgba(207, 226, 246, 0.24));
     clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+    transform: translateX(-50%);
   }
 
   .foam {
@@ -568,13 +750,14 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
   .pour {
     width: 7px;
-    height: 35px;
+    height: 11px;
     position: absolute;
     z-index: 3;
-    right: 78px;
+    left: 50%;
     bottom: 77px;
     display: flex;
     justify-content: space-between;
+    transform: translateX(-50%);
   }
 
   .pour i {
@@ -652,7 +835,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     align-items: center;
     gap: 13px;
     color: #8994a5;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.15em;
   }
