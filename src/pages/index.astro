@@ -3,17 +3,17 @@ const features = [
   {
     number: "01",
     title: "A tap that knows",
-    description: "Simple, code-based access makes every pour feel effortless.",
+    description: "Seamless flow so you can focus on pouring the perfect pint.",
   },
   {
     number: "02",
     title: "More good nights",
-    description: "Less time figuring things out. More time around the table.",
+    description: "Less time waiting, more time around the table.",
   },
   {
     number: "03",
     title: "Made for the real world",
-    description: "Thoughtful technology, designed to work where people gather.",
+    description: "Thoughtful technology, designed for a social experience.",
   },
 ];
 const base = import.meta.env.BASE_URL.endsWith("/")
@@ -108,8 +108,8 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           </div>
           <div class="approach-details">
             <p class="approach-intro">
-              Kegnetic is rethinking the way people connect with the tap: simple,
-              welcoming, powered by a little bit of clever technology.
+              Kegnetic is rethinking the way people connect. We put you in control of the tap. Simple, 
+              social, all powered by a little bit of technology.
             </p>
             <div class="feature-list">
               {features.map((feature) => (
@@ -247,7 +247,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     gap: 10px;
     margin: 0 0 23px;
     color: #68758a;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.14em;
     line-height: 1.5;
@@ -358,9 +358,9 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   }
 
   .tap-brand {
-    gap: 6px;
+    gap: 4px;
     color: #768196;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: 0.11em;
   }
@@ -598,7 +598,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     padding-top: 13px;
     border-top: 1px solid #edf0f5;
     color: #8691a3;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.13em;
   }
@@ -652,7 +652,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     align-items: center;
     gap: 13px;
     color: #8994a5;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.15em;
   }
@@ -710,21 +710,21 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
   .feature-number {
     color: #98a3b3;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
   }
 
   .feature h3 {
     margin-bottom: 4px;
     color: #25334a;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
   }
 
   .feature p {
     margin-bottom: 0;
     color: #8a95a6;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.5;
   }
 
@@ -769,8 +769,8 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   }
 
   .closing-mark {
-    width: 42px;
-    height: 42px;
+    width: 62px;
+    height: 62px;
     display: grid;
     place-items: center;
     margin-bottom: 18px;
@@ -780,14 +780,14 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   }
 
   .closing-mark img {
-    width: 31px;
-    height: 31px;
+    width: 60px;
+    height: 60px;
   }
 
   .closing .eyebrow {
     margin-bottom: 12px;
     color: #9fabc0;
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .closing h2 {
@@ -804,7 +804,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   .closing > p:last-child {
     margin-bottom: 0;
     color: #aab5c6;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .site-footer {
@@ -814,18 +814,18 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     justify-content: space-between;
     gap: 20px;
     color: #8a95a6;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .footer-brand {
     color: #314059;
-    font: 800 12px "Manrope", sans-serif;
+    font: 800 12px "Inter", sans-serif;
     letter-spacing: 0.1em;
   }
 
   .footer-brand span {
     margin-left: 2px;
-    font: 500 8px "DM Sans", sans-serif;
+    font: 500 12px "Inter", sans-serif;
     vertical-align: top;
   }
 
@@ -856,10 +856,12 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
     .note-top {
       right: -14px;
+      display: flex;
     }
 
     .note-bottom {
       left: -12px;
+      display: flex;
     }
 
     .approach {
@@ -878,17 +880,9 @@ const base = import.meta.env.BASE_URL.endsWith("/")
       height: 76px;
     }
 
-    .brand {
-      font-size: 17px;
-    }
-
     .brand img {
-      width: 31px;
-      height: 31px;
-    }
-
-    .status {
-      font-size: 10px;
+      width: 40px;
+      height: 40px;
     }
 
     .hero {
@@ -904,7 +898,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
     .eyebrow {
       margin-bottom: 18px;
-      font-size: 9px;
     }
 
     h1 {
@@ -935,16 +928,17 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     .note-top {
       top: 46px;
       right: 0;
+      display: none;
     }
 
     .note-bottom {
       bottom: 34px;
       left: 0;
+      display: none;
     }
 
     .hero-index {
       bottom: 22px;
-      font-size: 8px;
     }
 
     .approach {
@@ -959,17 +953,12 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
     .approach-intro {
       margin-top: 0;
-      font-size: 13px;
     }
 
     .feature {
       min-height: 76px;
       grid-template-columns: 25px 1fr 16px;
       gap: 11px;
-    }
-
-    .feature p {
-      font-size: 10px;
     }
 
     .closing {
@@ -982,7 +971,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
       justify-content: space-between;
       gap: 4px 15px;
       padding: 22px 0;
-      font-size: 9px;
     }
 
     .site-footer > span:nth-child(2) {
