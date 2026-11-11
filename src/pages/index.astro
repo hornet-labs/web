@@ -2,18 +2,27 @@
 const features = [
   {
     number: "01",
-    title: "A tap that knows",
-    description: "Seamless flow allowing you to focus on pouring the perfect pint.",
+    title: "Keep the line moving",
+    description:
+      "Self-service can help guests get served during busy moments, easing pressure at the bar and helping your team keep service flowing.",
   },
   {
     number: "02",
-    title: "More good nights",
-    description: "Less time waiting, more time connecting.",
+    title: "Put guests in control",
+    description:
+      "Let guests choose and pour at their own pace. A more hands-on experience can make ordering a drink part of the occasion.",
   },
   {
     number: "03",
-    title: "Made for the real world",
-    description: "Thoughtful technology, designed for an experience.",
+    title: "Make the tap wall a destination",
+    description:
+      "A self-service wall gives people something to gather around—a natural focal point that can add energy to your space.",
+  },
+  {
+    number: "04",
+    title: "Give your team more time for hospitality",
+    description:
+      "Self-service can take some routine serving pressure off your staff, so they can focus on the welcome, the atmosphere, and the details that make a visit memorable.",
   },
 ];
 const base = import.meta.env.BASE_URL.endsWith("/")
@@ -29,9 +38,9 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     <meta name="theme-color" content="#f7f8fa" />
     <meta
       name="description"
-      content="Kegnetic is making access at the tap simpler. Something good is brewing."
+      content="Bring self-service beer to your venue with Kegnetic: a fresh, social tap wall experience designed to keep guests connected and service moving."
     />
-    <title>Kegnetic — Something good is brewing</title>
+    <title>Self-service beer, made for your business — Kegnetic</title>
     <link rel="icon" type="image/svg+xml" href={`${base}kegnetic-mark.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,30 +56,30 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           <img src={`${base}kegnetic-mark.svg`} alt="" width="42" height="42" />
           <span>Kegnetic</span>
         </a>
-        <span class="status"><span class="status-dot"></span>Something's brewing</span>
+        <span class="status"><span class="status-dot"></span>Self-service for venues</span>
       </header>
 
       <main id="top">
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-copy">
             <p class="eyebrow"><span></span> A fresh take on the tap</p>
-            <h1 id="hero-title">A better pour<br />is <span>on tap.</span></h1>
+            <h1 id="hero-title">Self-service beer, <span>made for your business.</span></h1>
             <p class="hero-description">
-              
+              Give guests a more engaging way to get their next round—and give your team more room to focus on hospitality.
             </p>
-            <a class="scroll-link" href={`${base}#our-approach`}>
-              Get to know Kegnetic
-              <span aria-hidden="true">↓</span>
-            </a>
+            <div class="hero-actions">
+              <a class="button button-primary" href={`${base}#our-approach`}>Explore Kegnetic</a>
+              <a class="button button-secondary" href={`${base}#venue-contact`}>Talk to our team</a>
+            </div>
           </div>
 
           <div class="hero-art" aria-label="Illustration of a connected beer tap">
             <div class="art-glow"></div>
-            <div class="art-note note-top"><span class="note-icon">✳</span> Good things, on tap</div>
+            <div class="art-note note-top"><span class="note-icon">✳</span> A fresh, social experience</div>
             <div class="tap-card">
               <div class="tap-card-top">
                 <span class="tap-brand"><img src={`${base}kegnetic-mark.svg`} alt="" /> KEGNETIC</span>
-                <span class="tap-live"><span></span> READY</span>
+                <span class="tap-live"><span></span> SELF-SERVICE</span>
               </div>
               <div class="tap-illustration">
                 <div class="tap-halo"></div>
@@ -79,24 +88,21 @@ const base = import.meta.env.BASE_URL.endsWith("/")
                   <div class="screen-bezel">
                     <div class="screen-display">
                       <div class="screen-topbar">
-                        <span class="screen-brand">CHOOSE A POUR</span>
-                        <span class="screen-status"><i></i> TAP READY</span>
+                        <span class="screen-brand">YOUR VENUE</span>
+                        <span class="screen-status"><i></i> GOOD TIMES</span>
                       </div>
                       <div class="screen-drinks">
                         <div class="screen-drink">
                           <span class="drink-icon lager"></span>
-                          <span class="drink-name">LAGER</span>
-                          <span class="drink-price">£5.00</span>
+                          <span class="drink-name">POUR</span>
                         </div>
                         <div class="screen-drink">
                           <span class="drink-icon pale"></span>
-                          <span class="drink-name">PALE ALE</span>
-                          <span class="drink-price">£6.00</span>
+                          <span class="drink-name">CONNECT</span>
                         </div>
                         <div class="screen-drink">
                           <span class="drink-icon stout"></span>
-                          <span class="drink-name">STOUT</span>
-                          <span class="drink-price">£6.50</span>
+                          <span class="drink-name">ENJOY</span>
                         </div>
                       </div>
                     </div>
@@ -123,20 +129,19 @@ const base = import.meta.env.BASE_URL.endsWith("/")
                 <span class="round-arrow" aria-hidden="true">↗</span>
               </div>
             </div>
-            <div class="art-note note-bottom"><span class="spark">✦</span> Here's to what's next</div>
+            <div class="art-note note-bottom"><span class="spark">✦</span> Built around better moments</div>
           </div>
           <div class="hero-index" aria-hidden="true"><span>01</span><i></i> A NEW KIND OF POUR</div>
         </section>
 
         <section class="approach" id="our-approach" aria-labelledby="approach-title">
           <div class="approach-heading">
-            <p class="eyebrow">A little more about us</p>
-            <h2 id="approach-title">The best things<br />bring us <span>together.</span></h2>
+            <p class="eyebrow">The Kegnetic experience</p>
+            <h2 id="approach-title">A better experience, <span>from tap to table.</span></h2>
           </div>
           <div class="approach-details">
             <p class="approach-intro">
-              Kegnetic is rethinking the way people connect. We put you in control of the tap. Simple, 
-              social, all powered by a little technology.
+              Kegnetic brings self-service beer to your venue with a tap wall that puts guests in control of the pour. It’s a fresh, social experience designed to keep people connected and your service moving.
             </p>
             <div class="feature-list">
               {features.map((feature) => (
@@ -153,17 +158,18 @@ const base = import.meta.env.BASE_URL.endsWith("/")
           </div>
         </section>
 
-        <section class="closing" aria-label="Launch announcement">
+        <section class="closing" id="venue-contact" aria-labelledby="closing-title">
           <div class="closing-mark"><img src={`${base}kegnetic-mark.svg`} alt="" /></div>
-          <p class="eyebrow">We're just getting started</p>
-          <h2>Stay <span>thirsty.</span></h2>
-          <p>Our first pour is coming soon.</p>
+          <p class="eyebrow">Built around better moments</p>
+          <h2 id="closing-title">More moments to <span>connect.</span></h2>
+          <p>From the first pour to the next round, Kegnetic helps create more opportunities for people to connect.</p>
+          <a class="button button-closing" href={`${base}#venue-contact`}>Let’s talk about your venue</a>
         </section>
       </main>
 
       <footer class="site-footer">
         <a class="footer-brand" href={`${base}#top`}>KEGNETIC<span>®</span></a>
-        <span>Thoughtfully poured. Coming soon.</span>
+        <span>Self-service beer, made for your business.</span>
         <span>© {new Date().getFullYear()} Kegnetic</span>
       </footer>
     </div>
@@ -218,8 +224,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   .brand,
   .status,
   .tap-brand,
-  .tap-live,
-  .scroll-link {
+  .tap-live {
     display: inline-flex;
     align-items: center;
   }
@@ -301,9 +306,9 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
   h1 {
     margin-bottom: 24px;
-    font-size: clamp(56px, 6.3vw, 88px);
+    font-size: clamp(48px, 5vw, 70px);
     font-weight: 700;
-    letter-spacing: -0.085em;
+    letter-spacing: -0.075em;
     line-height: 0.99;
   }
 
@@ -321,29 +326,42 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     line-height: 1.8;
   }
 
-  .scroll-link {
-    gap: 13px;
-    color: var(--navy);
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .button {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 19px;
+    border: 1px solid transparent;
+    border-radius: 6px;
     font-size: 14px;
     font-weight: 700;
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
   }
 
-  .scroll-link span {
-    width: 31px;
-    height: 31px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #dce2eb;
-    border-radius: 50%;
-    font-size: 16px;
-    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
-  }
-
-  .scroll-link:hover span {
-    color: white;
+  .button-primary {
     background: var(--blue);
+    color: white;
+  }
+
+  .button-primary:hover {
+    background: #0056c9;
+  }
+
+  .button-secondary {
+    border-color: #dce2eb;
+    color: var(--navy);
+  }
+
+  .button-secondary:hover {
     border-color: var(--blue);
-    transform: translateY(2px);
+    color: var(--blue);
   }
 
   .hero-art {
@@ -884,6 +902,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     grid-template-columns: 36px 1fr 20px;
     align-items: center;
     gap: 15px;
+    padding: 10px 0;
     border-top: 1px solid #e5eaf0;
   }
 
@@ -985,9 +1004,23 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   }
 
   .closing > p:last-child {
+    max-width: 520px;
     margin-bottom: 0;
     color: #aab5c6;
     font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .button-closing {
+    position: relative;
+    z-index: 1;
+    margin-top: 24px;
+    background: white;
+    color: var(--navy);
+  }
+
+  .button-closing:hover {
+    background: #e8f1ff;
   }
 
   .site-footer {
@@ -1085,13 +1118,22 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 
     h1 {
       margin-bottom: 18px;
-      font-size: clamp(58px, 15vw, 78px);
+      font-size: clamp(46px, 11vw, 64px);
     }
 
     .hero-description {
       max-width: 340px;
       margin-bottom: 23px;
       font-size: 14px;
+    }
+
+    .hero-actions {
+      gap: 9px;
+    }
+
+    .button {
+      padding: 0 14px;
+      font-size: 13px;
     }
 
     .hero-art {
@@ -1145,7 +1187,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     }
 
     .closing {
-      padding: 54px 14px 56px;
+      padding: 54px 22px 56px;
     }
 
     .site-footer {
